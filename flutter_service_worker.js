@@ -3,23 +3,20 @@ const MANIFEST = 'flutter-app-manifest';
 const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 const RESOURCES = {
-  "version.json": "525a858fce84cf48acd737f015f076ba",
-"index.html": "c85f6f7226053ad2dc3cfbfd12c9612d",
-"/": "c85f6f7226053ad2dc3cfbfd12c9612d",
-"main.dart.js": "ee0008dfbe49f68f4781daa60d066298",
+  "version.json": "1aa371ab43f0040440b11102bc0f2337",
+"index.html": "5f81ded7eb96c9c001b9728f145aa8e8",
+"/": "5f81ded7eb96c9c001b9728f145aa8e8",
+"main.dart.js": "6d8c87313daf87f6db214932e7d7f625",
 "favicon.png": "5dcef449791fa27946b3d35ad8803796",
 "icons/Icon-192.png": "ac9a721a12bbc803b44f645561ecb1e1",
 "icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
-"manifest.json": "f38491b565284ae376c0dd0add2bb174",
-"assets/AssetManifest.json": "7d54eca1659b660890d89aa42569c3cb",
-"assets/NOTICES": "91cef80cec84b34551e0a78527b15540",
-"assets/FontManifest.json": "f268fa87b770bd9a5312607db723c2a6",
-"assets/packages/cupertino_icons/assets/CupertinoIcons.ttf": "b14fcf3ee94e3ace300b192e9e7c8c5d",
+"manifest.json": "7ddfd10e62ef47ec6493771cba31bef9",
+"assets/AssetManifest.json": "4859f5e453ea06aaaa01ae633a791ccf",
+"assets/NOTICES": "b87e7ceb9de555cb3775cbfd1db2618c",
+"assets/FontManifest.json": "dc3d03800ccca4601324923c0b1d6d57",
+"assets/packages/cupertino_icons/assets/CupertinoIcons.ttf": "6d342eb68f170c97609e9da345464e5e",
 "assets/fonts/MaterialIcons-Regular.otf": "1288c9e28052e028aba623321f7826ac",
-"assets/assets/images/product-placeholder.png": "c88f62cb7af0efd83297aa4c771c1511",
-"assets/assets/fonts/Lato-Bold.ttf": "2d15decc87393ec398f00dc3d7a2163d",
-"assets/assets/fonts/Anton-Regular.ttf": "13770dde4178c487efc63d33866fe613",
-"assets/assets/fonts/Lato-Regular.ttf": "c5eb54404c9dbda925f7142d6343c913"
+"assets/assets/images/flyer.jpg": "efd57fb3ee46504a20c467af59e4b099"
 };
 
 // The application shell files that are downloaded before a service worker can
@@ -163,7 +160,7 @@ async function downloadOffline() {
     }
     currentContent[key] = true;
   }
-  for (var resourceKey in Object.keys(RESOURCES)) {
+  for (var resourceKey of Object.keys(RESOURCES)) {
     if (!currentContent[resourceKey]) {
       resources.push(resourceKey);
     }
